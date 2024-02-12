@@ -1,6 +1,7 @@
 # music.github.io 
 
 to list do 
-- ()ltem 
-- (x) ltem done 
+- [] ltem 1
+- {X} ltem done 
 - <del> yeet <del>
+- [] 
