@@ -2,6 +2,6 @@
 
 to list do 
 - [] ltem 1
-- {X} ltem done 
+- [x]ltem done 
 - <del> yeet <del>
 - [] 
