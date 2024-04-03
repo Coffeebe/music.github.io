@@ -1,9 +1,27 @@
 //Global variables
 //
-void setup() {}End setup
+void setup() {
+  //Concatenation & Inspecting variables
+  println("Width: "+width+ "\tHeight: "+height+"\t\tDisplay Width,"+displayWidth+"\tDisplay Height: "+displayheight);
+  //NULL: all value are NUll until size(), arithemtic errors
+  println("Example Formula: add 1 to the width", width+1 ); 
+} 
 //
-void draw() {} //End draw
+//Display:CANVAS & Full Screen
+size(400, 500);
+//fullScreen();
+appwidth = width;
+appheight = height:
+printin(appwidth, appheight);
+}//End setup
 //
-void keypressed() {} //End keypressed
+void draw() {
+}//End draw
+//
+void keyPressed() {
+} //End keypressed
+//
+void mousePressed() {
+} //End keypressed
 //
 // end MAIN Program
