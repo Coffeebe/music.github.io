@@ -1,37 +1,39 @@
 //Global variables
 int appWidth, appHeight;
+float backgroundX, backgroundY, backgroundwidth,backgroundheight;
 //
 void setup() {
   println("Hello world");
   //Concatenation & Inspecting variables
-  println("Width: "+width+ "\tHeight: "+height+"\t\tDisplay Width: "+displayWidth+"\tDisplay Height: "+Displayheight);
+  println("Width: "+width+ "\tHeight: "+height+"\t\tDisplay Width: "+displayWidth+"\tDisplay Height: "+displayHeight);
   //NULL: all value are NUll until size(), arithemtic errors
   println("Example Formula: add 1 to the width", width+1 );
 
 //
-//Display: CANVAS & Full Screen
+//Display: CANVAS & Full 
 size(400, 500);//width,height
-//fullScreen();//displaywidth, displayheigtht
-appWidth = width;
-appHeight = height;
+fullScreen();//displaywidth, displayheigtht
+appWidth = displayWidth;
+appHeight = displayHeight;
 //landscape is hardcoded
 //println(appwidth, appheight);
 //display geomtry: landscape, portrait, square
-String DisplayInstructureions=( appWidth >= appHeight) ?"good to go": "bro,turn your phone" ;
-println(DisplayInstrucetions);
+String displayInstructions=( appWidth >= appHeight) ?"good to go": "bro,turn your phone" ;
+println(displayInstructions);
 //
 //Populate
-backgroundX=appWidth;
-backgroundY=appHeight;
-backgroundwidth=appwidth;
-backgroundheight=appHeight;
+backgroundX= appWidth*0;
+backgroundY= appHeight*0;
+backgroundwidth= appWidth;
+backgroundheight= appHeight;
 //layout DIVs
 //rect(X,Y, Width, Height); 
-rect(background X,background Y,backgroundWidth,backgroundheight);
-int centerX = appwidth*1/2
-int centerY -
-println(background X,background Y,backgroundWidth,backgroundheight);
-
+rect(backgroundX,backgroundY,backgroundwidth,backgroundheight);
+int centerX = appWidth*1/2;
+int centerY= appHeight*1/2;
+rect(centerX*1/2,centerY*1/2,appWidth*1/2,appHeight*1/2);
+rect(X,Y, Width, Height);
+/*
 }//End setup
 //
 void draw() {
