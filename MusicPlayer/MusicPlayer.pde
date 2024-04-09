@@ -1,6 +1,8 @@
 //Global variables
 int appWidth, appHeight;
 float backgroundX, backgroundY, backgroundwidth,backgroundheight;
+float Xpicture, Ypicture, widthpicture, heightpicture;
+float Xquit, Yquit, Widthquit, Heightquit;
 //
 void setup() {
   println("Hello world");
@@ -26,14 +28,22 @@ backgroundX= appWidth*0;
 backgroundY= appHeight*0;
 backgroundwidth= appWidth;
 backgroundheight= appHeight;
+Xpicture= appWidth*85/100;
+Ypicture= appHeight*15/100;
+widthpicture= appWidth*1/2;
+heightpicture= appHeight*1/2;
+Xquit= appWidth*0;
+Yquit= appHeight*0;
+Widthquit= appWidth;
+Heightquit= appHeight;
 //layout DIVs
 //rect(X,Y, Width, Height); 
 rect(backgroundX,backgroundY,backgroundwidth,backgroundheight);
 int centerX = appWidth*1/2;
 int centerY= appHeight*1/2;
-rect(centerX*1/2,centerY*1/2,appWidth*1/2,appHeight*1/2);
-rect(X,Y, Width, Height);
-/*
+//rect(centerX*1/2,centerY*1/2,appWidth*1/2,appHeight*1/2);
+rect(Xpicture ,Ypicture, widthpicture, heightpicture);
+rect(Xquit ,Yquit, Widthquit, Heightquit); 
 }//End setup
 //
 void draw() {
