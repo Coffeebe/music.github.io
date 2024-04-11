@@ -4,6 +4,8 @@ float backgroundX, backgroundY, backgroundwidth,backgroundheight;
 float Xpicture, Ypicture, widthpicture, heightpicture;
 float Xquit, Yquit, Widthquit, Heightquit;
 float Xplay, Yplay, Widthplay, Heightplay;
+float Xpreious, Ypreious, Widthpreious, Heightpreious;
+float Xskip,Yskip,Widthskip,Heightskip;
 //
 void setup() {
   println("Hello world");
@@ -30,28 +32,37 @@ backgroundY= appHeight*0;
 backgroundwidth= appWidth;
 backgroundheight= appHeight;
 Xpicture=appWidth= appWidth*35/100;
-Ypicture= appHeight*1/6;
+Ypicture= appHeight*appHeight*1/6;
 widthpicture= appWidth*35/100;
-heightpicture= appHeight*25/100;
+heightpicture= appHeight*1/4;
 Xquit= appWidth*0;
 Yquit= appHeight*0;
-Widthquit= appWidth;
-Heightquit= appHeight;
+Widthquit= appWidth*0;
+Heightquit= appHeight*0;
 Xplay= appWidth*0;
 Yplay= appHeight*0;
-Widthplay= appWidth;
-Heightplay= appHeight;
+Widthplay= appWidth*0;
+Heightplay= appHeight*0;
+Xpreious= appWidth*0;
+Ypreious= appHeight*0;
+Widthpreious= appWidth*0;
+Heightpreious= appHeight*0;
+Xskip= appWidth*0;
+Yskip= appHeight*0;
+Widthskip= appWidth*0;
+Heightskip= appHeight*0;
+
 //layout DIVs
 //rect(X,Y, Width, Height); 
 rect(backgroundX,backgroundY,backgroundwidth,backgroundheight);
 int centerX = appWidth*1/2;
 int centerY= appHeight*1/2;
 //rect(centerX*1/2,centerY*1/2,appWidth*1/2,appHeight*1/2);
-/*
 rect(Xpicture,Ypicture,widthpicture,heightpicture);
 rect(Xquit,Yquit,Widthquit,Heightquit); 
-rect(Xplay,Yplay,widthplay,Heightplay)
-*/
+rect (Xplay,Yplay,Widthplay,Heightplay);
+rect (Xpreious,Ypreious,Widthpreious,Heightpreious);
+rect (Xskip,Yskip,Widthskip,Heightskip);
 }//End setup
 //
 void draw() {
