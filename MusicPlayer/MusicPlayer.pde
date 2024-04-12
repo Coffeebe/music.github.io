@@ -1,11 +1,14 @@
 //Global variables
 int appWidth, appHeight;
 float backgroundX, backgroundY, backgroundwidth,backgroundheight;
-float Xpicture, Ypicture, widthpicture, heightpicture;
+float Xpicture, Ypicture, Widthpicture, heightpicture;
 float Xquit, Yquit, Widthquit, Heightquit;
 float Xplay, Yplay, Widthplay, Heightplay;
 float Xpreious, Ypreious, Widthpreious, Heightpreious;
 float Xskip,Yskip,Widthskip,Heightskip;
+float Xloop, Yloop,Widthloop,Heightloop;
+float Xshuffle,Ysheffle,Widthshuffle,Heightshuffle;
+
 //
 void setup() {
   println("Hello world");
@@ -33,7 +36,7 @@ backgroundwidth= appWidth;
 backgroundheight= appHeight;
 Xpicture=appWidth= appWidth*35/100;
 Ypicture= appHeight*appHeight*1/6;
-widthpicture= appWidth*35/100;
+Widthpicture= appWidth*35/100;
 heightpicture= appHeight*1/4;
 Xquit= appWidth*0;
 Yquit= appHeight*0;
@@ -51,6 +54,10 @@ Xskip= appWidth*0;
 Yskip= appHeight*0;
 Widthskip= appWidth*0;
 Heightskip= appHeight*0;
+Xloop= appWidth*0;
+Yloop= appHeight*0;
+Widthloop= appWidth*0;
+Heightloop=appWidth*0;
 
 //layout DIVs
 //rect(X,Y, Width, Height); 
@@ -58,11 +65,13 @@ rect(backgroundX,backgroundY,backgroundwidth,backgroundheight);
 int centerX = appWidth*1/2;
 int centerY= appHeight*1/2;
 //rect(centerX*1/2,centerY*1/2,appWidth*1/2,appHeight*1/2);
-rect(Xpicture,Ypicture,widthpicture,heightpicture);
+rect(Xpicture,Ypicture,Widthpicture,heightpicture);
 rect(Xquit,Yquit,Widthquit,Heightquit); 
 rect (Xplay,Yplay,Widthplay,Heightplay);
 rect (Xpreious,Ypreious,Widthpreious,Heightpreious);
 rect (Xskip,Yskip,Widthskip,Heightskip);
+rect(Xloop,Yloop,Widthloop,Heightloop);
+
 }//End setup
 //
 void draw() {
