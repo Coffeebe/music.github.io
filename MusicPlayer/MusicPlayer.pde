@@ -25,7 +25,7 @@ appWidth = displayWidth;
 appHeight = displayHeight;
 //landscape is hardcoded
 //println(appwidth, appheight);
-//display geomtry: landscape, portrait, square
+//display geomtry: landscape, portrait, square  
 String displayInstructions=( appWidth >= appHeight) ?"good to go": "bro,turn your phone" ;
 println(displayInstructions);
 //
