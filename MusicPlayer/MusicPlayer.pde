@@ -9,8 +9,10 @@ float Xskip, Yskip, Widthskip, Heightskip;
 float Xloop, Yloop, Widthloop, Heightloop;
 float Xshuffle, Ysheffle, Widthshuffle, Heightshuffle;
 //
-color backgroundColour, darkbackground, whitebackground ;
-boolean whitemode=false;
+color backgroundColour, darkbackground=0, whitebackground=255 ;//gray scale,much smaller than Color
+color foregroundColour;
+color white=255,yellow=#FFFF00,black=0;//Hexidecimal, see tools / Colour selector
+boolean whitemode=true;
 //
 void setup() {
   println("Hello world");
@@ -77,28 +79,35 @@ backgroundX= appWidth*0;
   rect(Xloop, Yloop, Widthloop, Heightloop);
   //var populate
   whitemode= true;
-  darkBackground = #00000;//gray scale,much smaller than Color
-  whitebacground = #fffff;//gray scale much smaller than color
-  if (hour()>=9 && hour()<=17);
-  backgroundColour = whitebackground;
-  if (hour()<9 && hour()>17);
-  backgroundColour = darkbackground;
-  if whitemode==true && hour()hour()>=9 && hour()<=17) {
-    backgroundcolour=  whitebackground;
+  if ( hour()>=9 && hour()<=17) backgroundColour = whitebackground;
+  if (hour()<9 && hour()>17) backgroundColour = darkbackground;
+  if (whitemode==true && hour()>=9 && hour()<=17) {
+    backgroundColour=  whitebackground;
+    foregroundColour=#FFFFFF;
   } else {
-    backgroundcolour= darkbackground
+    backgroundColour= darkbackground;
+    foregroundColour= #FFFF00;//yellow
+    if (hour()>=9 && hour()<=17)foregroundColour=255;
   }
 }//End setup
 //
 void draw() {
   background(backgroundColour);//Grayscale
+  fill(foregroundColour);
   rect(Xquit, Yquit, Widthquit, Heightquit);
 }//End draw
 //
-void keyPressed() {
+void keyPressed() { //IListener 
+  if (key=='Q'//key=='q') exit();
+  if (keycode==CODED && keyCode=='UP') exit();
 } //End keypressed
 //
-void mousePressed() {
+void mousePressed() {//QUIT
+if(mouseX>quitButtonX mouseX<quitButtonX+quitButtonWidth && mouseY>QuitbuttonY && mouse)
+{
+  exit();
+}
+    
 } //End keypressed
 //
 // end MAIN Program
