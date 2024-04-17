@@ -11,8 +11,8 @@ float Xshuffle, Ysheffle, Widthshuffle, Heightshuffle;
 //
 color backgroundColour, darkbackground=0, whitebackground=255 ;//gray scale,much smaller than Color
 color foregroundColour;
-color white=255,yellow=#FFFF00,black=0;//Hexidecimal, see tools / Colour selector
-boolean whitemode=true;
+color white=255, yellow=#FFFF00, black=0, purple=#FF00FF; //Hexidecimal, see tools / Colour selector
+boolean whitemode=false;
 //
 void setup() {
   println("Hello world");
@@ -79,8 +79,8 @@ backgroundX= appWidth*0;
   rect(Xloop, Yloop, Widthloop, Heightloop);
   //var populate
   whitemode= true;
-  if ( hour()>=9 && hour()<=17) backgroundColour = whitebackground;
-  if (hour()<9 && hour()>17) backgroundColour = darkbackground;
+  //if ( hour()>=9 && hour()<=17) backgroundColour = whitebackground;
+  //if (hour()<9 && hour()>17) backgroundColour = darkbackground;
   if (whitemode==true && hour()>=9 && hour()<=17) {
     backgroundColour=  whitebackground;
     foregroundColour=#FFFFFF;
@@ -93,21 +93,35 @@ backgroundX= appWidth*0;
 //
 void draw() {
   background(backgroundColour);//Grayscale
-  fill(foregroundColour);
+  fill(foregroundColour);// resetting the defaults
+  //
+  //quit button
+  //fill purple
+  //if ( mouseX>quituBttonX && mouseX<quitButtonX+quitButtonWidth && mouseY>QuitbuttonY && mouse) fill(yellow)
+  fill(purple);
+  rect(quitbuttonX+buttonWidth*1/7, quitbuttonY, quitbuttonheight);
+  if (mouseX>quituBttonX && mouseX<quitButtonX+quitButtonWidth && mouseY>QuitbuttonY && mouse) {
+    fill(yellow);
+    rect(quitbuttonX+buttonWidth*1/7, quitbuttonY1/7, quitbuttonheight);
+    fill(foregroundcolour);// reset defaults
+  } else {
+    fill(purple);
+  }
   rect(Xquit, Yquit, Widthquit, Heightquit);
 }//End draw
 //
-void keyPressed() { //IListener 
-  if (key=='Q'//key=='q') exit();
-  if (keycode==CODED && keyCode=='UP') exit();
-} //End keypressed
-//
-void mousePressed() {//QUIT
-if(mouseX>quitButtonX mouseX<quitButtonX+quitButtonWidth && mouseY>QuitbuttonY && mouse)
-{
-  exit();
-}
-    
-} //End keypressed
+void keyPressed() { //Listener
+  if (key=='Q'||key=='q') exit();
+  if (key==CODED && keyCode==UP) exit();
+  if (key=='W'||key=='w')
+  } //End keypressed
+  //
+  void mousePressed() {//listener
+    //QUIT
+    if ( mouseX>quituBttonX && mouseX<quitButtonX+quitButtonWidth && mouseY>QuitbuttonY && mouse)
+    {
+      exit();
+    }
+  } //End keypressed
 //
 // end MAIN Program
