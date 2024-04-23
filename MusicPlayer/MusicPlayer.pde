@@ -1,7 +1,11 @@
 //Global variables
+Minium Minium
+Audioplayer soundEffect1;
+Audioplayer playlist1;
+//
 int appWidth, appHeight;
 float backgroundX, backgroundY, backgroundwidth, backgroundheight;
-float Xpicture, Ypicture, Widthpicture, heightpicture;
+float Xpicture, Ypicture, Widthpicture, Heightpicture;
 float Xquit, Yquit, Widthquit, Heightquit;
 float Xplay, Yplay, Widthplay, Heightplay;
 float Xpreious, Ypreious, Widthpreious, Heightpreious;
@@ -35,6 +39,16 @@ void setup() {
   //display geomtry: landscape, portrait, square
   String displayInstructions=( appWidth >= appHeight) ?"good to go": "bro,turn your phone" ;
   println(displayInstructions);
+  //
+  minium= new Minium(this); //loadflile should also load from project folder
+  String extension =".mp3";
+  String quickButtonsound="CarDoorCloseing.mp3";
+  String pathway="../Audio/Sound Files/";// Relative Path
+  print(pathwaysoundEffect+QuiTbuttonsound=extension);
+  String path = sketchpath( pathwaySoundeffects+ quit buttonsound + extension); //absolute
+  //println(path);
+  soundEffect1= minium.loadfile(path);
+  //playlist1= minium.loadfile(path);
   //
   //Fonts from 0S (Operating system)
   String[] fonlist = PFont.list();
@@ -99,6 +113,8 @@ backgroundX= appWidth*0;
     foregroundColour= #FFFF00;//yellow
     if (hour()>=9 && hour()<=17)foregroundColour=255;
   }
+  //
+  soundEffects1.Loop(0);
 }//End setup
 //
 void draw() {
@@ -138,7 +154,9 @@ void keyPressed() { //Listener
   void mousePressed() {//listener
     //QUIT
     if ( mouseX>quituBttonX && mouseX<quitButtonX+quitButtonWidth && mouseY>QuitbuttonY && mouse)
-    {
+  {
+    soundEffects1.Loop(0);
+    delay(2600);// parameeter: milliseconds
       exit();
     }
   } //End keypressed
