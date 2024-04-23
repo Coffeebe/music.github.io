@@ -7,7 +7,10 @@ float Xplay, Yplay, Widthplay, Heightplay;
 float Xpreious, Ypreious, Widthpreious, Heightpreious;
 float Xskip, Yskip, Widthskip, Heightskip;
 float Xloop, Yloop, Widthloop, Heightloop;
-float Xshuffle, Ysheffle, Widthshuffle, Heightshuffle;
+float Xshuffle, Ysheffle, Widthshuffle, Heightshuffle;\
+int size;
+PFont generalFont;
+String quit="QUIT";
 //
 color backgroundColour, darkbackground=0, whitebackground=255 ;//gray scale,much smaller than Color
 color foregroundColour;
@@ -33,6 +36,13 @@ void setup() {
   String displayInstructions=( appWidth >= appHeight) ?"good to go": "bro,turn your phone" ;
   println(displayInstructions);
   //
+  //Fonts from 0S (Operating system)
+  String[] fonlist = PFont.list();
+  printArray(fontist); 
+  size = (appwidth . appHeight ) ? appHeight : appWidth ; // Font size starts with smaller dimension
+  generalFont =createFont("Harrington", size);
+  //bottomFont = createFont(Harrington", size);
+  // Tools / Create Font / Find Font / Use size field/ do not press "OK",known bug
   //Populate
   /*
 backgroundX= appWidth*0;
@@ -107,6 +117,15 @@ void draw() {
   } else {
     fill(purple);
   }
+  fill(foregroundColour); //Restting the Defaults
+  //Quit,text
+  fill(foregroundColour); //lnk
+  textAlign( CENTER,CENTER ); //Align X&Y, see processing.org/ Reference
+  //Values: [LEFT | CENTER | RIGHT ]& [ TOP | CENTER | BOTTEM | BASElINE ]
+  size =appHeight*1/23; //var based on ratio of display
+  textFont(generalFont,size);
+  text(quit,QuitButton+quitButtonWidth*1/7, quitButtonY+quitButton*1/7,quitButtonWidth*5/7,quitButtonHeight*5/7);//inside rect() above
+  fill(foregroundColur); //Resetting the Defaults
   rect(Xquit, Yquit, Widthquit, Heightquit);
 }//End draw
 //
