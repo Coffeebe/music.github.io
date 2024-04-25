@@ -37,8 +37,8 @@ titleFont= createFont("Harrington",size);
 rect(titleX,titleY,titlewidth,titleheight);
 //rect(X,Y, width, Height) //footer
 //
-//Repeated code: draw()ing text
+//Repeated Code: draw()ing text
+fill(purple); //link 
 textFont(titleFont,20);
 text(title, titleY,titleY,titlewidth,titleheight);
-fill(purple); //link 
 textAlign( CENTER,CENTER ); //Align X&Y,see processing,org/Reference

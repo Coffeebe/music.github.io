@@ -1,18 +1,17 @@
 //Global variables
-Minium Minium
-Audioplayer soundEffect1;
-Audioplayer playlist1;
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effect.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+Minium minium;
+AudioPlayer SoundEffect1;
+AudioPlayer playlist1;
 //
 int appWidth, appHeight;
-float backgroundX, backgroundY, backgroundwidth, backgroundheight;
-float Xpicture, Ypicture, Widthpicture, Heightpicture;
-float Xquit, Yquit, Widthquit, Heightquit;
-float Xplay, Yplay, Widthplay, Heightplay;
-float Xpreious, Ypreious, Widthpreious, Heightpreious;
-float Xskip, Yskip, Widthskip, Heightskip;
-float Xloop, Yloop, Widthloop, Heightloop;
-float Xshuffle, Ysheffle, Widthshuffle, Heightshuffle;\
-int size;
+float backgroundX, backgroundY, backgr    
+int size ;
 PFont generalFont;
 String quit="QUIT";
 //
@@ -44,15 +43,15 @@ void setup() {
   String extension =".mp3";
   String quickButtonsound="CarDoorCloseing.mp3";
   String pathway="../Audio/Sound Files/";// Relative Path
-  print(pathwaysoundEffect+QuiTbuttonsound=extension);
-  String path = sketchpath( pathwaySoundeffects+ quit buttonsound + extension); //absolute
+  ///print(pathwaysoundEffect+QuiTbuttonsound=extension);
+  String path = sketchPath( pathwaySoundEffects+ quitButtonSound + extension); //absolute
   //println(path);
   soundEffect1= minium.loadfile(path);
   //playlist1= minium.loadfile(path);
   //
   //Fonts from 0S (Operating system)
   String[] fonlist = PFont.list();
-  printArray(fontist); 
+  printArray(fontist);
   size = (appwidth . appHeight ) ? appHeight : appWidth ; // Font size starts with smaller dimension
   generalFont =createFont("Harrington", size);
   //bottomFont = createFont(Harrington", size);
@@ -136,11 +135,11 @@ void draw() {
   fill(foregroundColour); //Restting the Defaults
   //Quit,text
   fill(foregroundColour); //lnk
-  textAlign( CENTER,CENTER ); //Align X&Y, see processing.org/ Reference
+  textAlign( CENTER, CENTER ); //Align X&Y, see processing.org/ Reference
   //Values: [LEFT | CENTER | RIGHT ]& [ TOP | CENTER | BOTTEM | BASElINE ]
   size =appHeight*1/23; //var based on ratio of display
-  textFont(generalFont,size);
-  text(quit,QuitButton+quitButtonWidth*1/7, quitButtonY+quitButton*1/7,quitButtonWidth*5/7,quitButtonHeight*5/7);//inside rect() above
+  textFont(generalFont, size);
+  text(quit, QuitButton+quitButtonWidth*1/7, quitButtonY+quitButton*1/7, quitButtonWidth*5/7, quitButtonHeight*5/7);//inside rect() above
   fill(foregroundColur); //Resetting the Defaults
   rect(Xquit, Yquit, Widthquit, Heightquit);
 }//End draw
@@ -152,13 +151,13 @@ void keyPressed() { //Listener
   } //End keypressed
   //
   void mousePressed() {//listener
-    //QUIT
     if ( mouseX>quituBttonX && mouseX<quitButtonX+quitButtonWidth && mouseY>QuitbuttonY && mouse)
-  {
-    soundEffects1.Loop(0);
-    delay(2600);// parameeter: milliseconds
-      exit();
+    {
+     soundeffect_1();
+     exit();
     }
-  } //End keypressed
+  } //End mousePressed
 //
-// end MAIN Program
+    
+}//End soundeffect_1()
+  // end MAIN Program
