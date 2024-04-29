@@ -5,13 +5,14 @@
  */
  //
  //Global variables
+ float  footerX,footerY,footerwidth , footerheight;
  float titleX,titleY, titlewidth , titleheight;
  PFont titleFont;
  String title="Wahoo!";
  int size;
- color resetdefaultcolour=#ffffff, purple=#ff00ff;
+ color ResetdefaultColour=#FFFFFF, purple=#ff00ff;
  //
- //Display Geoemtry,Display Orientation: Landscape, portrait, square
+ //Display Geometry,Display Orientation: Landscape, portrait, square
  fullScreen();
  //
  //concatenation & inspection of variables
@@ -20,6 +21,10 @@ int appWidth= displayWidth;
 int appHeight= displayHeight;
 //
 //population 
+ footerX=appWidth*5/10;
+ footerY=appHeight*5/10;
+ footerwidth =appWidth*8/10;
+ footerheight= appHeight*6/10;
 titleX = appWidth*1/10;
 titleY = appHeight*1/10;
 titlewidth =appWidth*8/10;
@@ -35,6 +40,7 @@ titleFont= createFont("Harrington",size);
 //
 //Divs & rect()s: rect(X,Y,width, Height);=
 rect(titleX,titleY,titlewidth,titleheight);
+rect( footerX, FooterY, Footerwidth, Footerheight);
 //rect(X,Y, width, Height) //footer
 //
 //Repeated Code: draw()ing text
