@@ -117,6 +117,16 @@ backgroundX= appWidth*0;
 }//End setup
 //
 void draw() {
+  //display
+  //background(backgroundcolour);//hardcoded background colour out, use if to change
+  if(lightmode == ture ) { //boolean keybind 
+  backgroundImagename = bike; //obiwan
+  path pathway+ landscape_square+ backgroundImageName + extenion;
+  bckgroundImage =loadImage( path);
+  }else {
+    backgroundImagename=;
+    backgroundImage = loadImage(path);
+  }
   background(backgroundColour);//Grayscale
   fill(foregroundColour);// resetting the defaults
   //
@@ -145,9 +155,23 @@ void draw() {
 }//End draw
 //
 void keyPressed() { //Listener
-  if (key=='Q'||key=='q') exit();
-  if (key==CODED && keyCode==UP) exit();
+  if (key=='Q'||key=='q') exit
+  {
+    soundeffect_1();
+  }
+  if (key==CODED && keyCode==UP) exit(); 
   if (key=='W'||key=='w')
+   if(lightmode == false) 
+   {lightmode= true; //light mode On
+   } else{
+     lightmode= false; //dark made ON, no darkmode boolean required
+   }
+}//End Day Made
+//
+//soundEffects1.loop(0);
+  }//end day mode
+   //
+     //soundEffect1.loop(0);
   } //End keypressed
   //
   void mousePressed() {//listener
