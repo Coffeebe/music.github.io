@@ -18,12 +18,13 @@ boolean Lightmode= false,darkmode=false,Lightmode= false,darkmode=false;
   backgroundImageheight = appheight*-1;
   //
   String Image= Summer knights Market Background Image;
+  String backgroundImagename= Image;
+  String extension =".png";
   String pathway="../../../Images/";
   String landscape_square="landscape & square Images/";
-  String backgroundImagename= Image;
-  //string path =pathway+portrait+backgroundImagename = name
-  String path = pathway+portrait+backgroundImagename, extension;
-  String extension =".jpg";
+  String portrait = "Portrait/"
+  //string path =pathway+portrait+backgroundImagename = name;
+  String path = pathway+portrait+backgroundImagename+ extension;
   backgroundImage=loadImage(path);
   //div
   rect(backgroundImageX, backgroundImageY, backgroundImageWidth, BackGroundHeight);

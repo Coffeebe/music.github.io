@@ -4,7 +4,7 @@ import ddf.minim.analysis.*;
 import ddf.minim.effect.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
-
+//Global variables
 Minium minium;
 AudioPlayer SoundEffect1;
 AudioPlayer playlist1;
@@ -19,7 +19,13 @@ color backgroundColour, darkbackground=0, whitebackground=255 ;//gray scale,much
 color foregroundColour;
 color white=255, yellow=#FFFF00, black=0, purple=#FF00FF; //Hexidecimal, see tools / Colour selector
 boolean whitemode=false;
+boolean lightmode=false;
 //
+String PathDarkbackgroundImage,pathlightgroundImage;
+PImage summerMarkplacebackground
+PImage backgroundImage;
+PImage pictureImage;
+float pictureright, picturecentered, pictureleft;
 void setup() {
   println("Hello world");
   //Concatenation & Inspecting variables
@@ -56,7 +62,21 @@ void setup() {
   generalFont =createFont("Harrington", size);
   //bottomFont = createFont(Harrington", size);
   // Tools / Create Font / Find Font / Use size field/ do not press "OK",known bug
-  //Populate
+  //
+  //
+  divs();
+  //variable poplation
+  //Images
+  String summerMarketPlaceImage= "Summer Knights Market background Image";
+  String extensionpng=".png";
+  String pathway="../Images/";
+  String land_scape_square="landscape & square Images/";
+  String ExtenionJPG=".Jpg"
+  String pathway= "../../Images/';
+  String landscape_square=''landscape& square Images/";
+  String portrait ="Portrait/";
+  String backgroundfileName="BackGround Images/";
+  pathLightBackgroundImage="back
   /*
 backgroundX= appWidth*0;
    backgroundY= appHeight*0;
