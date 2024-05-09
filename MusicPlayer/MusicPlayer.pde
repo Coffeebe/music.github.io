@@ -9,9 +9,9 @@ Minium minium;
 AudioPlayer SoundEffect1;
 AudioPlayer playlist1;
 //
-int appWidth, appHeight;
-float backgroundX, backgroundY, backgr    
-int size ;
+int appWidth,appHeight;
+//
+int size;
 PFont generalFont;
 String quit="QUIT";
 //
@@ -22,7 +22,7 @@ boolean whitemode=false;
 boolean lightmode=false;
 //
 String PathDarkbackgroundImage,pathlightgroundImage;
-PImage summerMarkplacebackground
+PImage summerMarkplacebackground;
 PImage backgroundImage;
 PImage pictureImage;
 float pictureright, picturecentered, pictureleft;
@@ -71,7 +71,7 @@ void setup() {
   String extensionpng=".png";
   String pathway="../Images/";
   String land_scape_square="landscape & square Images/";
-  String ExtenionJPG=".Jpg"
+  String ExtenionJPG=".Jpg";
   String pathway= "../../Images/';
   String landscape_square=''landscape& square Images/";
   String portrait ="Portrait/";
@@ -88,7 +88,7 @@ void setup() {
   float pictureImageaspectratio=pictureImagewidthpixel/pictureImageHeightpixel;
   float largerpicturedimension = smallerpicturedimension*pictureaspectratio;//aspect ratio
   if ( picturewidth<largerpictureDimension) {//Image will not fit into div rect()
-  while pictureWidth <largerpicturedimension){
+  while pictureWidth<largerpicturedimension){
     largerpicturedimension-=1;
     smallerpicturedimension-=1;
     //note: ratios like percent are not linear decreases in both directions
@@ -102,40 +102,10 @@ void setup() {
   CENTERED:X-value of Image= pictureX+(pictureWidth-picturewidthadjusted)/2;
   Right:X-value of image= pictureX+pictureWidth-picturewidthAdjusted;
   */
-  pictureRIGHT= pictureX
-  pictureCENTERED=pictureX+(picturewidth-pictureWidthAdjusted)/2
+  pictureRIGHT= pictureX;
+  pictureCENTERED=pictureX+(picturewidth-pictureWidthAdjusted)/2;
   pictureLeft=pictureX+pictureWidth-picturewidthadjusted;
   //
-  /*
-backgroundX= appWidth*0;
-   backgroundY= appHeight*0;
-   backgroundwidth= appWidth;
-   backgroundheight= appHeight;
-   Xpicture=appWidth= appWidth*35/100;
-   Ypicture= appHeight*appHeight*1/6;
-   Widthpicture= appWidth*1/5;
-   heightpicture= appHeight*1/4;
-   Xquit= appWidth*90/100;
-   Yquit= appHeight*91/100;
-   Widthquit= appWidth*9/100;
-   Heightquit= appHeight*5/100;
-   Xplay= appWidth*1/2;
-   Yplay= appHeight*100/100;
-   Widthplay= appWidth*1/20;
-   Heightplay= appHeight*1/20;
-   Xpreious= appWidth*45/100;
-   Ypreious= appHeight*1/2;
-   Widthpreious= appWidth*1/20;
-   Heightpreious= appHeight*1/20;
-   Xskip= appWidth*0;
-   Yskip= appHeight*0;
-   Widthskip= appWidth*0;
-   Heightskip= appHeight*0;
-   Xloop= appWidth*0;
-   Yloop= appHeight*0;
-   Widthloop= appWidth*0;
-   Heightloop=appWidth*0;
-   */
 
   //layout DIVs
   //rect(X,Y, Width, Height);
@@ -171,15 +141,17 @@ backgroundX= appWidth*0;
 void draw() {
   //display
   //background(backgroundcolour);//hardcoded background colour out, use if to change
-  if(lightmode == ture ) { //boolean keybind 
+  if(lightmode == ture ) { //boolean keybind,logical shortcut
+  //caution: see setup
   backgroundImagename = bike; //obiwan
   path pathway+ landscape_square+ backgroundImageName + extenion;
-  bckgroundImage =loadImage( path);
-  }else {
-    backgroundImagename=;
-    backgroundImage = loadImage(path);
+  bckgroundImage =loadImage( pathlightbackgroundImage);
+  }else if ( lightmode == false){
+    backgroundImage = loadImage(pathdarkbackgroundImage);
+  }else{
+    tint(255,255,255,0); //no blue;
   }
-  background(backgroundColour);//Grayscale
+  image( backgroundImage,backgroundX,backgroundY,backgroundwidth,backgroundheight)
   fill(foregroundColour);// resetting the defaults
   //
   //quit button
