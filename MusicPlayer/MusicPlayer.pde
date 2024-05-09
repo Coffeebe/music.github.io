@@ -76,7 +76,36 @@ void setup() {
   String landscape_square=''landscape& square Images/";
   String portrait ="Portrait/";
   String backgroundfileName="BackGround Images/";
-  pathLightBackgroundImage="back
+  pathLightBackgroundImage=pathway+backgroundfilename+summerMarkplaceImage+extenionpng;
+  pictureImage =loadImage(pictureImagepath);
+  //
+  //Image aspect ratio calculations
+  //note: if-else & while to adjust Aspect ratio dimensions
+  //forms a procedure for aspect ratios of all Images (copy and paste in setup())
+  float smallerPictureDimension=(picturewidth < pictureheight) ? picturewidth:pictureheight;
+  float pictureImagewidthpixel= 800.0; //origonally INTs,ratio will be decimal
+  float pictureImageHeightpixel= 600.0;//CAUTION:must avoid truncation to ZERO Value
+  float pictureImageaspectratio=pictureImagewidthpixel/pictureImageHeightpixel;
+  float largerpicturedimension = smallerpicturedimension*pictureaspectratio;//aspect ratio
+  if ( picturewidth<largerpictureDimension) {//Image will not fit into div rect()
+  while pictureWidth <largerpicturedimension){
+    largerpicturedimension-=1;
+    smallerpicturedimension-=1;
+    //note: ratios like percent are not linear decreases in both directions
+     }
+  }
+  picturewidthadjusted = largerpicturedimension;
+  pictureheightadjusted = smallpicturedismension;
+  //
+  /*Image can be centered,left jusified, or right justified on the larger dimension
+  LEFT:X-value of image same as rect()
+  CENTERED:X-value of Image= pictureX+(pictureWidth-picturewidthadjusted)/2;
+  Right:X-value of image= pictureX+pictureWidth-picturewidthAdjusted;
+  */
+  pictureRIGHT= pictureX
+  pictureCENTERED=pictureX+(picturewidth-pictureWidthAdjusted)/2
+  pictureLeft=pictureX+pictureWidth-picturewidthadjusted;
+  //
   /*
 backgroundX= appWidth*0;
    backgroundY= appHeight*0;
@@ -124,9 +153,12 @@ backgroundX= appWidth*0;
   whitemode= true;
   //if ( hour()>=9 && hour()<=17) backgroundColour = whitebackground;
   //if (hour()<9 && hour()>17) backgroundColour = darkbackground;
-  if (whitemode==true && hour()>=9 && hour()<=17) {
+  if (hour()<9 && hour()>17) whitemode=true;//day&nightmode clock choice
+  ////printIn(daymode);
+  if( whitemode==true&& lightmode==true){//light&dark modes,logical shortcut
     backgroundColour=  whitebackground;
     foregroundColour=#FFFFFF;
+    backgroundColour=loadImage(pathlightbackgroundImage); //Changing this Variable with 3 different images
   } else {
     backgroundColour= darkbackground;
     foregroundColour= #FFFF00;//yellow
