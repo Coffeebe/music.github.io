@@ -66,18 +66,17 @@ void setup() {
   //
   //
   divs();
-  //variable poplation
+  //variable poplationc
   //Images
   String summerMarketPlaceImage= "Summer Knights Market background Image";
-  String extensionpng=".png";
-  String pathway="../Images/";
-  String land_scape_square="landscape & square Images/";
+  String ExtensionPNG=".png";
   String ExtenionJPG=".Jpg";
-  String pathway= "../../Images/';
-  String landscape_square=''landscape& square Images/";
+  String pathway= "../Images/';
+  String landscape_Square="landscape & square Images/";;;;;;;;
   String portrait ="Portrait/";
   String backgroundfileName="BackGround Images/";
-  pathLightBackgroundImage=pathway+backgroundfilename+summerMarkplaceImage+extenionpng;
+  pathLightBackgroundImage=pathway+backgroundfilename+summerMarkplaceImage+extenionPNG;
+  pathdarkbackgroundImage=pathway+portraita+summerMarketplaceImage+extenionPNG;
   pictureImage =loadImage(pictureImagepath);
   //
   //Image aspect ratio calculations
@@ -89,7 +88,7 @@ void setup() {
   float pictureImageaspectratio=pictureImagewidthpixel/pictureImageHeightpixel;
   float largerpicturedimension = smallerpicturedimension*pictureaspectratio;//aspect ratio
   if ( picturewidth<largerpictureDimension) {//Image will not fit into div rect()
-  while pictureWidth<largerpicturedimension){
+  while (pictureWidth<largerpicturedimension){
     largerpicturedimension-=1;
     smallerpicturedimension-=1;
     //note: ratios like percent are not linear decreases in both directions
@@ -142,18 +141,18 @@ void setup() {
 void draw() {
   //display
   //background(backgroundcolour);//hardcoded background colour out, use if to change
-  if(lightmode == ture ) { //boolean keybind,logical shortcut
+  if(lightmode == true ) { //boolean keybind,logical shortcut
   //caution: see setup
-  backgroundImagename = bike; //obiwan
-  path pathway+ landscape_square+ backgroundImageName + extenion;
+  //backgroundImagename=;
+  //path pathway+ landscape_square+ backgroundImageName + extenion;
   bckgroundImage =loadImage( pathlightbackgroundImage);
   }else if ( lightmode == false){
     backgroundImage = loadImage(pathdarkbackgroundImage);
   }else{
     tint(255,255,255,0); //no blue;
   }
-  image( backgroundImage,backgroundX,backgroundY,backgroundwidth,backgroundheight)
-  fill(foregroundColour);// resetting the defaults
+  image( backgroundImage,backgroundX,backgroundY,backgroundwidth,backgroundheight);
+  //fill(foregroundColour);// resetting the defaults
   //
   //quit button
   //fill purple
@@ -172,7 +171,7 @@ void draw() {
   fill(foregroundColour); //lnk
   textAlign( CENTER, CENTER ); //Align X&Y, see processing.org/ Reference
   //Values: [LEFT | CENTER | RIGHT ]& [ TOP | CENTER | BOTTEM | BASElINE ]
-  size =appHeight*1/23; //var based on ratio of display
+  size=appHeight*1/23; //var based on ratio of display
   textFont(generalFont, size);
   text(quit, QuitButton+quitButtonWidth*1/7, quitButtonY+quitButton*1/7, quitButtonWidth*5/7, quitButtonHeight*5/7);//inside rect() above
   fill(foregroundColur); //Resetting the Defaults
@@ -180,23 +179,24 @@ void draw() {
 }//End draw
 //
 void keyPressed() { //Listener
-  if (key=='Q'||key=='q') exit
+  if (key=='Q'||key=='q') 
   {
     soundeffect_1();
   }
-  if (key==CODED && keyCode==UP) exit(); 
-  if (key=='W'||key=='w')
-   if(lightmode == false) 
-   {lightmode= true; //light mode On
+  if (key==CODED && keyCode==ESC) exit(); 
+  {
+    soundeffect_1();
+  }
+   //Caution,must returns to"request white,light mode"
+  if (key=='W'||key=='w'){//Day mode, white light containing blue colour
+   if(lightmode == false){
+     lightmode= true; //light mode On
    } else{
      lightmode= false; //dark made ON, no darkmode boolean required
    }
-}//End Day Made
-//
-//soundEffects1.loop(0);
-  }//end day mode
+}//End Day Mode
    //
-     //soundEffect1.loop(0);
+   //soundEffect1.loop(0);
   } //End keypressed
   //
   void mousePressed() {//listener
@@ -208,5 +208,5 @@ void keyPressed() { //Listener
   } //End mousePressed
 //
     
-}//End soundeffect_1()
+//End soundeffect_1()
   // end MAIN Program
