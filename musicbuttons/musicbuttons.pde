@@ -12,8 +12,8 @@ int numbersoundeffects=4;
 int numberMusicsongs=8;
 Audioplayer[]playerlist1 = new audioplayer[numbermusicsongs];
 Audioplayer[]soundEffects= new audioplayer[numberSoundeffect];
-int 
-//
+int currentSong=0; //java at 0, no for all languages
+ //
 int appWidth,appHeight;
 //
  //Display: CANVAS & Full
@@ -52,12 +52,26 @@ int appWidth,appHeight;
   println("song Position", playlist.position(),"song lenght)
   //note:for loop feature
   //easter egg: program time for number of song loops
-  aternate to timer for music player ,times to the end of a song
+  //aternate to timer for music player ,times to the end of a song
   */
   //
-  if((playlist[currentsong].isplaying()) println("nothing is playing pick a song");
+  if(!playlist[currentsong].isplaying()) println("nothing is playing pick a song");
   if (playlist[currentsong].isplaying()&&!palylist[current].islooping () )println("play once");
   //
+  /*
+  //auto play code for future use
+  //contains instructions from key board short Cuts
+  if (playlist[currentsong],isplaying()){
+    //empty if is false
+  }else if(.lenght()<180000) {//PAIN minutes is 2 ,120s, 120,000ms
+  }else if (!playlist[currentsong].isplaying() &&()){//calc Pain #
+  //true:if 75% played, we need a stop & rewind button
+    //currentsong at end of FILE
+    playlist[currentsong].rewind();//note: !.isplaying() &.rewind()=stop
+    currentsong=current+1;//currentSong
+    playlist[currentsong].play();
+  }
+  */
 }//end draw
   //
   void keyPressed() {

@@ -72,7 +72,7 @@ void setup() {
   String ExtensionPNG=".png";
   String ExtenionJPG=".Jpg";
   String pathway= "../Images/';
-  String landscape_Square="landscape & square Images/";;;;;;;;
+  String landscape_Square="landscape & square Images/";
   String portrait ="Portrait/";
   String backgroundfileName="BackGround Images/";
   pathLightBackgroundImage=pathway+backgroundfilename+summerMarkplaceImage+extenionPNG;
