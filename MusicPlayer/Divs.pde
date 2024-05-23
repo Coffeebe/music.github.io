@@ -40,7 +40,7 @@ void population(){
    Yloop= appHeight*0;
    Widthloop= appWidth*0;
    Heightloop=appWidth*0;
-}}//end population
+}//end population
 //
 void drawRects() { //layout Divs
 //Formula: rect(X,Y,Width,Height);
