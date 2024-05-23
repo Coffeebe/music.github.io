@@ -1,3 +1,5 @@
+
+//Global Variables
 //test
 import ddf.minim.*;
 import ddf.minim.analysis.*;
@@ -7,9 +9,9 @@ import ddf.minim.spi.*;
 import ddf.minim.ugen.*;
 //\minium library
 //
-Minium minium;
-int numbersoundeffects=4;
-int numberMusicsongs=8;
+Minium minium;//creates object to access all functions
+int numbersoundeffects=4;//DEV Verify ,os able to count (cs20 solution)
+int numberMusicsongs=8;//DDEV Verify, os able to count (cs20 soluttion)
 Audioplayer[]playerlist1 = new audioplayer[numbermusicsongs];
 Audioplayer[]soundEffects= new audioplayer[numberSoundeffect];
 int currentSong=0; //java at 0, no for all languages
@@ -18,6 +20,7 @@ int appWidth, appHeight;
 //
 boolean looping = false;
 //
+void setup() {
 //Display: CANVAS & Full
 size(400, 500);//width,height
 fullScreen();//displaywidth, displayheigtht
@@ -35,28 +38,29 @@ String pathwaysoundeffect="../../../Audio/soundeffect/";//relative path
 String pathwayMusic= "../../../Audio/musicdownload/";//relative path
 String quickButtonsound="CarDoorCloseing.mp3";
 String pathway="../Audio/Sound Files/";// Relative Path
+String groove="groove";
 //print(pathwaysoundEffect+QuiTbuttonsound=extension);
 //print("relative pathway:", pathwaymusic+groove+extension);
 String pathQuitbuttonsound = sketchPath( pathwaySoundEffects + quitButtonSound + extension); //absolute
 String pathgroovesong = sketchPath( pathwaySoundEffects + quitButtonSound + extension); //absolute
 //println(pathgroovesong);
 soundEffect[0]= minium.loadfile(pathQuitbuttonsound);
-playlist[0]= minim.loadfile(pathgroovesong);//"'is compiler error
+playlist[0]= Minim.loadfile(pathgroovesong);//"'is compiler error
 //playlist1= minium.loadfile(path);
 //
 //music starts before canvas purpose of player
 //playlist1[currentSong].loop;//test
 //
 } //End setup
-/
+//
 void draw() {
   //playlist1[currentsong].loop(0);
-  println("song Position", playlist.position(), "song lenght)
+  println("song Position", playlist.position(), "song Lenght",playlist[currentsong].length());
   //note:for loop feature
   //easter egg: program time for number of song loops
   //aternate to timer for music player ,times to the end of a song
 
-  if (playlist[currentsong].islooping &&playlist[currentsong].loopcount()!=-1)println("There are", playlist[currentsong].loopcount(), "loops left.");
+  if (playlist[currentsong].islooping && playlist[currentsong].loopcount()!=-1)println("There are", playlist[currentsong].loopcount(), "loops left.");
   if (playlist[currentsong].islooping && playlist[currentSong].loopcount()==-1)println ("looping Infinitely");
   //
   if (!playlist[currentsong].isplaying()) println("nothing is playing pick a song");
