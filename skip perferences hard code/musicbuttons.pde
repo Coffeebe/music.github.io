@@ -20,6 +20,8 @@ int appWidth, appHeight;
 //
 boolean looping = false;
 //
+int skip=0;
+//
 void setup() {
 //Display: CANVAS & Full
 size(400, 500);//width,height
@@ -108,7 +110,19 @@ void keyPressed() {
     if (key=='F'||key=='f')playlist[0].skip(1000);//forward 1 second skip
     if (key=='R'||key=='r')playlist[0].skip(-1000);//reverse 1 second
     //perferences might need to be in draw()
-    int skip =5000;//local,might need to be global
+    //if (key=='H'||key=='h')skip=5000;
+    //if(key=='G'||key=='g')skip=10000;
+    if(key=='G'||key=='g') {//two preference option
+    if (skip==5000) { 
+      skip =10000;
+    }else{
+      skip =5000;
+      }
+    }
+      
+    //int skip=5000;
+    //local,might need to be global
+    //perferences,might need to be in draw
     //
   }//end keypressed
   //
