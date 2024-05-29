@@ -14,7 +14,7 @@ int numbersoundeffects=4;//DEV Verify ,os able to count (cs20 solution)
 int numberMusicsongs=8;//DDEV Verify, os able to count (cs20 soluttion)
 Audioplayer[]playerlist= new audioplayer[numbermusicsongs];
 Audioplayer[]soundEffects= new audioplayer[numberSoundeffect];
-AudioMetaData[]playismetadata
+AudioMetaData[]playlistmetadata=new AudioMetaData[NumberMusicSongs];
 int currentSong=0; //java at 0, no for all languages
 //
 int appWidth, appHeight;
@@ -38,12 +38,13 @@ println(displayInstructions);
 minium= new Minium(this); //loadflile should also load from project folder
 String extension =".mp3";
 String pathwaysoundeffect="../../../Audio/soundeffect/";//relative path
+//Note:'../ preivous Error 
 String pathwayMusic= "../../../Audio/musicdownload/";//relative path
 String quickButtonsound="CarDoorCloseing.mp3";
 String pathway="../Audio/Sound Files/";// Relative Path
 String groove="groove";
-//print(pathwaysoundEffect+QuiTbuttonsound=extension);
-//print("relative pathway:", pathwaymusic+groove+extension);
+//println(pathwaysoundEffect+QuiTbuttonsound=extension);
+//println ("relative pathway:", pathwaymusic+groove+extension);
 String pathQuitbuttonsound = sketchPath( pathwaySoundEffects + quitButtonSound + extension); //absolute
 String pathgroovesong = sketchPath( pathwaySoundEffects + quitButtonSound + extension); //absolute
 //println(pathgroovesong);
