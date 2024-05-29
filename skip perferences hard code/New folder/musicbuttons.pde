@@ -14,6 +14,7 @@ int numbersoundeffects=4;//DEV Verify ,os able to count (cs20 solution)
 int numberMusicsongs=8;//DDEV Verify, os able to count (cs20 soluttion)
 Audioplayer[]playerlist= new audioplayer[numbermusicsongs];
 Audioplayer[]soundEffects= new audioplayer[numberSoundeffect];
+AudioMetaData[]playismetadata
 int currentSong=0; //java at 0, no for all languages
 //
 int appWidth, appHeight;
@@ -48,6 +49,7 @@ String pathgroovesong = sketchPath( pathwaySoundEffects + quitButtonSound + exte
 //println(pathgroovesong);
 soundEffect[0]= minium.loadfile(pathQuitbuttonsound);
 playlist[0]= Minim.loadfile(pathgroovesong);//"'is compiler error
+metadata[0]=minim.loadfile(pathQuitbuttonsound);
 //playlist1= minium.loadfile(path);
 //
 //music starts before canvas purpose of player
@@ -82,6 +84,25 @@ void draw() {
    playlist[currentsong].play();
    }
    */
+  }
+  //Mute fix
+  if (playliat[currentsong].isMuted() ) print("Muted"); //End Mute fix
+  /*previous If-Else
+  If(playlist[currrentsong].isplaying()){
+    //empty If,true
+  }else {
+    playlist[currentsong].rewind();//caution:!.playing()&.rewind= sTop
+  } 
+  */
+  //
+  //printing text to console | canvas
+  rect(width*1/4,height*0,width1/2,height*1/10); //text div
+  fill(white);//Ink
+  textAlign(CENTER,CENTER); //align X&Y see processing.org/ reference
+  //Values:[left|Center|right]&[top|center|bottom|baseline]
+  textFont(titleFont,30);//change the number until it fits, largest font size
+  text(songMetadata1.title(), Width*1/4,height*0,width*1/2,height*1/10);
+  fill(255);//reset to for rest of the program
 }//end draw
 //
 void keyPressed() {
