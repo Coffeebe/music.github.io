@@ -50,7 +50,8 @@ String pathgroovesong = sketchPath( pathwaySoundEffects + quitButtonSound + exte
 //println(pathgroovesong);
 soundEffect[0]= minium.loadfile(pathQuitbuttonsound);
 playlist[0]= Minim.loadfile(pathgroovesong);//"'is compiler error
-metadata[0]=minim.loadfile(pathQuitbuttonsound);
+playlistMetadata[0]= playlist[0].getMetaData(); // reads song meta 1,like song 1 mimicing array notation
+//metadata[0]=minim.loadfile(pathQuitbuttonsound);
 //playlist1= minium.loadfile(path);
 //
 //music starts before canvas purpose of player
@@ -97,11 +98,16 @@ void draw() {
   */
   //
   //printing text to console | canvas
+  fill(black)://note: background for rect()
   rect(width*1/4,height*0,width1/2,height*1/10); //text div
   fill(white);//Ink
   textAlign(CENTER,CENTER); //align X&Y see processing.org/ reference
   //Values:[left|Center|right]&[top|center|bottom|baseline]
+  int size = 43; //change the number until it fits,largest font size
   textFont(titleFont,30);//change the number until it fits, largest font size
+  printArray(playlistMetaData);//hard Drive Address to where the meta data var is
+  printArray(playlistMetaData[0]);//Hard drive address to specific var
+  printIn("title is;", playlistMetaData[0].title() );///hard Drive address to where the meta Data is
   text(songMetadata1.title(), Width*1/4,height*0,width*1/2,height*1/10);
   fill(255);//reset to for rest of the program
 }//end draw
