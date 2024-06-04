@@ -46,14 +46,20 @@ String groove="groove";
 //println(pathwaysoundEffect+QuiTbuttonsound=extension);
 //println ("relative pathway:", pathwaymusic+groove+extension);
 String pathQuitbuttonsound = sketchPath( pathwaySoundEffects + quitButtonSound + extension); //absolute
-String pathgroovesong = sketchPath( pathwaySoundEffects + quitButtonSound + extension); //absolute
+String pathgroovesong = sketchPath( pathwayMusic + quitButtonSound + extension); //absolute
 //println(pathgroovesong);
+String beatyourcompetition = "Beat_Your_Competition";
+String cycles="Cycles";
+String eurek= "Eureka";
+string ghosr
 soundEffect[0]= minium.loadfile(pathQuitbuttonsound);
 playlist[0]= Minim.loadfile(pathgroovesong);//"'is compiler error
 playlistMetadata[0]= playlist[0].getMetaData(); // reads song meta 1,like song 1 mimicing array notation
 //metadata[0]=minim.loadfile(pathQuitbuttonsound);
 //playlist1= minium.loadfile(path);
 //
+//
+//println("current song, random number:, int (random(0,8));
 //music starts before canvas purpose of player
 //playlist1[currentSong].loop;//test
 //
@@ -110,6 +116,8 @@ void draw() {
   printIn("title is;", playlistMetaData[0].title() );///hard Drive address to where the meta Data is
   text(songMetadata1.title(), Width*1/4,height*0,width*1/2,height*1/10);
   fill(255);//reset to for rest of the program
+   //
+   if (playlist[currentSong].ismuted())println("muted");
 }//end draw
 //
 void keyPressed() {
@@ -132,6 +140,7 @@ void keyPressed() {
       playlist[currentsong].pause();
       playlist[currentsong].rewind();// affects loop times
       looping=false;
+    
     }// end stop button
     //
     
@@ -147,7 +156,17 @@ void keyPressed() {
       skip =5000;
       }
     }
-      
+    if (key=='M'|| key=='m'){// Mute Button
+      //note: mute individual songs if multiple songs are playing
+      //caution: potenial fatal error
+      if ( playlist[currentSong].isMuted()){
+        playlist[currentsong].unmute();
+      } else {
+        playlist[currentSong].mute();
+      }
+     if (key=='A'||key=='a')currentSong= int random(numberMusicsong-numberMusicsong,numberMusicsong)); 
+     //
+     //must add music and rest of key pressed for play & Loop
     //int skip=5000;
     //local,might need to be global
     //perferences,might need to be in draw
