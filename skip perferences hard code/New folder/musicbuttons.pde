@@ -7,17 +7,16 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugen.*;
-//\minium library
-//
-Minium minium;//creates object to access all functions
+//\minium libraryw
 int numbersoundeffects=4;//DEV Verify ,os able to count (cs20 solution)
 int numberMusicsongs=8;//DDEV Verify, os able to count (cs20 soluttion)
 Audioplayer[]playerlist= new audioplayer[numbermusicsongs];
 Audioplayer[]soundEffects= new audioplayer[numberSoundeffect];
 AudioMetaData[]playlistmetadata=new AudioMetaData[NumberMusicSongs];
 int currentSong=0; //java at 0, no for all languages
+int skip = 5000
 //
-int appWidth, appHeight;
+int appWidth,appHeight;
 //
 boolean looping = false;
 //
@@ -51,7 +50,16 @@ String pathgroovesong = sketchPath( pathwayMusic + quitButtonSound + extension);
 String beatyourcompetition = "Beat_Your_Competition";
 String cycles="Cycles";
 String eurek= "Eureka";
-string ghosr
+String ghost_walk="ghost_walk";
+String newsroon="the_simplest";
+filepathNameMusic[currentsong]= sketchpath(pathwaysoundEffects+extension);//absolute path
+//printIn( curretsong, filepathnamemusic[current]);
+//equivalent functions: ++ | +=1
+filepathNameMusic[currentSong+=1]=Pathwaymusic+beatyourComptition + extension;
+//printIn(currentsong,fliepathNameMusic[currentsong]);
+filepathNameMusic[currentsong+=1]= pathwaymusic+cycles+extension;
+filepathNameMusic[currentsong+=1]= pathwaymusic+Eureka+extension;
+filepathNameMusic[currentsong+=1]= pathwaymusic++extension;
 soundEffect[0]= minium.loadfile(pathQuitbuttonsound);
 playlist[0]= Minim.loadfile(pathgroovesong);//"'is compiler error
 playlistMetadata[0]= playlist[0].getMetaData(); // reads song meta 1,like song 1 mimicing array notation
@@ -78,24 +86,25 @@ void draw() {
   if (!playlist[currentsong].isplaying()) println("nothing is playing pick a song");
   if (playlist[currentsong].isplaying()&&!playlist[current].islooping () )println("play once");
   //
-  /*
+  
   //auto play code for future use
    //scontains instructions from key board short Cuts
    if (playlist[currentsong],isplaying()){
    //empty if is false
-   }else if(.lenght()<180000) {//PAIN minutes is 2 ,120s, 120,000ms
-   }else if (looping==false && !playlist[currentsong].isplaying() &&(playlist[currentsong].position()>playlist[currentsong].length()*0.75)){//calc Pain #
+   } else if(.lenght()<180000) {//PAIN minutes is 2 ,120s, 120,000ms
+   } else if (looping==false && !playlist[currentsong].isplaying() &&(playlist[currentsong].position()>playlist[currentsong].length()*0.75)){//calc Pain #
    //true:if 75% played, we need a stop & rewind button
    //currentsong at end of FILE
    playlist[currentsong].rewind();//note: !.isplaying() &.rewind()=stop
    currentsong=current+1;//currentSong
    playlist[currentsong].play();
    }
-   */
+  
   }
   //Mute fix
-  if (playliat[currentsong].isMuted() ) print("Muted"); //End Mute fix
-  /*previous If-Else
+  /*
+  if (playliat[currentsong].isMuted()) print("Muted"); //End Mute fix
+  previous If-Else
   If(playlist[currrentsong].isplaying()){
     //empty If,true
   }else {
@@ -105,7 +114,7 @@ void draw() {
   //
   //printing text to console | canvas
   fill(black)://note: background for rect()
-  rect(width*1/4,height*0,width1/2,height*1/10); //text div
+  rect(width*1/4,height*0,width*1/2,height*1/10); //text div
   fill(white);//Ink
   textAlign(CENTER,CENTER); //align X&Y see processing.org/ reference
   //Values:[left|Center|right]&[top|center|bottom|baseline]
@@ -143,13 +152,18 @@ void keyPressed() {
     
     }// end stop button
     //
-    
+    -ff: first 10 seconds means NEXT
+     -ff: last 25% means NEXT
+     -ff means between above, it is a ff Button
+    -note:between the above,NEXT Exists
     if (key=='F'||key=='f')playlist[0].skip(1000);//forward 1 second skip
     if (key=='R'||key=='r')playlist[0].skip(-1000);//reverse 1 second
     //perferences might need to be in draw()
     //if (key=='H'||key=='h')skip=5000;
-    //if(key=='G'||key=='g')skip=10000;
+    //if(key=='G'||key=='g')skip=10000; 
+    */
     if(key=='G'||key=='g') {//two preference option
+    printlin ("old Value of SKIP",skip);
     if (skip==5000) { 
       skip=int (playlist[0].lenght()*0.25);//tuncated to nearest millisecond
     }else{
@@ -162,9 +176,14 @@ void keyPressed() {
       if ( playlist[currentSong].isMuted()){
         playlist[currentsong].unmute();
       } else {
-        playlist[currentSong].mute();
+        playlist[currentSong].mute()
       }
-     if (key=='A'||key=='a')currentSong= int random(numberMusicsong-numberMusicsong,numberMusicsong)); 
+     if (key=='A'||key=='a'){currentSong= int random(numberMusicsong-numberMusicsong,numberMusicsong));
+     println("current Song,random number:",currentSong);
+     playlist.pause();//note: computer play muitple song
+     playlist.rewind();
+     playlist= minim.loadfile( filePathNameMusic{currentsong]);
+     playlist.play();
      //
      //must add music and rest of key pressed for play & Loop
     //int skip=5000;
