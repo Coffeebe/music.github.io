@@ -157,16 +157,39 @@ void keyPressed() {
      -ff means between above, it is a ff Button
     -note:between the above,NEXT Exists
     if (key=='F'||key=='f')playlist[0].skip(1000);//forward 1 second skip
-    if (key=='R'||key=='r')playlist[0].skip(-1000);//reverse 1 second
+    */
+    if(playposition<10000);
+    if(playlist.position()>=10000 &&(playlist.position()<=playlist.lenght()0.75);
+    if(playlist.position()>playlist.lenght()0.75);{
+      */
+    println("current Song,random number:",currentSong);
+     playlist.pause();//note: computer play muitple song
+     playlist.rewind();
+     //try catch
+     if (currentsong >= numberMusicSongs) {//note: possilble error when !=
+     currentSong = 0;
+     }else{
+       currentsong++;
+     }
+     println("current Song changed to:",currentsong);
+     playlist=minim.loadfile (filepathnameMusic[currentsong]);
+     playlist.play();
+     /*
+     
+     println("New value of skip,skip,'position:",playlist.postion(),"Crossedlast 75%");playlist.position()
+    }
+    if (key=='R'||key=='r')playlist[0].skip(-1000);
+    //reverse 1 second
+    println(
     //perferences might need to be in draw()
     //if (key=='H'||key=='h')skip=5000;
     //if(key=='G'||key=='g')skip=10000; 
     */
     if(key=='G'||key=='g') {//two preference option
-    printlin ("old Value of SKIP",skip);
+    println ("old Value of SKIP",skip, "position:", playlist.position(), 'Crossed last 75%);
     if (skip==5000) { 
       skip=int (playlist[0].lenght()*0.25);//tuncated to nearest millisecond
-    }else{
+    }else{     
       skip =5000;
       }
     }
