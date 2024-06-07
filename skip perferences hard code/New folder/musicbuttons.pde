@@ -16,7 +16,7 @@ AudioMetaData[]playlistmetadata=new AudioMetaData[NumberMusicSongs];
 int currentSong=0; //java at 0, no for all languages
 int skip = 5000
 //
-int appWidth,appHeight;
+int appheight,appweight
 //
 boolean looping = false;
 //
@@ -95,11 +95,30 @@ void draw() {
    } else if (looping==false && !playlist[currentsong].isplaying() &&(playlist[currentsong].position()>playlist[currentsong].length()*0.75)){//calc Pain #
    //true:if 75% played, we need a stop & rewind button
    //currentsong at end of FILE
+   
    playlist[currentsong].rewind();//note: !.isplaying() &.rewind()=stop
    currentsong=current+1;//currentSong
    playlist[currentsong].play();
-   }
-  
+   } 
+   */
+  print("current song # is:",currentsong);
+  playlist.pause();//note: computer play muitple song
+     playlist.rewind();
+     //try catch
+     if int( random(numbermusicsongs>=numberMusicSongs-1) {//note: possilble error when !=
+     currentSong = 0;
+     }else{
+       currentsong++;
+     }
+     println("current Song changed to:",currentsong);
+     playlist=minim.loadfile (filePathnameMusic[currentsong]);
+     playlist.play();
+     /*
+     if (!playlist.isplaying()){//error:else
+     printIn('else of IF-elseif-else(.isplaying)");
+     playlist.pause();//note: computer plays harddrive file,
+     playlist.rewind();// muliplel files will play at the 
+     iioou 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ppp
   }
   //Mute fix
   /*
@@ -166,13 +185,13 @@ void keyPressed() {
      playlist.pause();//note: computer play muitple song
      playlist.rewind();
      //try catch
-     if (currentsong >= numberMusicSongs) {//note: possilble error when !=
+     if int( random(numbermusicsongs>=numberMusicSongs-1) {//note: possilble error when !=
      currentSong = 0;
      }else{
        currentsong++;
      }
      println("current Song changed to:",currentsong);
-     playlist=minim.loadfile (filepathnameMusic[currentsong]);
+     playlist=minim.loadfile (filePathnameMusic[currentsong]);
      playlist.play();
      /*
      
