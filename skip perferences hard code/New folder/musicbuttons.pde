@@ -1,5 +1,5 @@
 
-//Global Variables
+//Global Variableb
 //test
 import ddf.minim.*;
 import ddf.minim.analysis.*;
@@ -7,7 +7,7 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugen.*;
-//\minium libraryw
+//\minium library
 int numbersoundeffects=4;//DEV Verify ,os able to count (cs20 solution)
 int numberMusicsongs=8;//DDEV Verify, os able to count (cs20 soluttion)
 Audioplayer[]playerlist= new audioplayer[numbermusicsongs];
@@ -16,7 +16,7 @@ AudioMetaData[]playlistmetadata=new AudioMetaData[NumberMusicSongs];
 int currentSong=0; //java at 0, no for all languages
 int skip = 5000
 //
-int appheight,appweight
+int AppHeight,AppWeight
 //
 boolean looping = false;
 //
@@ -51,7 +51,10 @@ String beatyourcompetition = "Beat_Your_Competition";
 String cycles="Cycles";
 String eurek= "Eureka";
 String ghost_walk="ghost_walk";
-String newsroon="the_simplest";
+String newsroom = "Newsroom"
+String startyourEngines = "Start_Your_Engines";
+String thSimpest="the_simplest";
+
 filepathNameMusic[currentsong]= sketchpath(pathwaysoundEffects+extension);//absolute path
 //printIn( curretsong, filepathnamemusic[current]);
 //equivalent functions: ++ | +=1
@@ -59,7 +62,10 @@ filepathNameMusic[currentSong+=1]=Pathwaymusic+beatyourComptition + extension;
 //printIn(currentsong,fliepathNameMusic[currentsong]);
 filepathNameMusic[currentsong+=1]= pathwaymusic+cycles+extension;
 filepathNameMusic[currentsong+=1]= pathwaymusic+Eureka+extension;
-filepathNameMusic[currentsong+=1]= pathwaymusic++extension;
+filepathNameMusic[currentsong+=1]= pathwaymusic+ghost_walk+extension;
+filepathNameMusic[currentsong+=1]= pathwaymusic+Newsroom+extension;
+filepathNameMusic[currentsong+=1]= pathwaymusic+start_your_Engines+extension;
+filepathNAmeMusic[currentsong+=1]= pathwaymusic+the_simplest+extension;
 soundEffect[0]= minium.loadfile(pathQuitbuttonsound);
 playlist[0]= Minim.loadfile(pathgroovesong);//"'is compiler error
 playlistMetadata[0]= playlist[0].getMetaData(); // reads song meta 1,like song 1 mimicing array notation
@@ -90,8 +96,12 @@ void draw() {
   //auto play code for future use
    //scontains instructions from key board short Cuts
    if (playlist[currentsong],isplaying()){
-   //empty if is false
-   } else if(.lenght()<180000) {//PAIN minutes is 2 ,120s, 120,000ms
+   //empty if is false 
+   if(playlist.isPlaying()){
+     if(!playlist.islooping() && looping=false; // protect .loop() from .rewind(). () as stop loop
+   } else if looping == false && !playlist.isplaying() && playlist.lenght()<180000) {//PAIN minutes is 2 ,120s, 120,000ms
+   //true: if song is less than # minutes,stop,I want to hear it from the beginning
+   //.pause() in keypressed() is actually stop
    } else if (looping==false && !playlist[currentsong].isplaying() &&(playlist[currentsong].position()>playlist[currentsong].length()*0.75)){//calc Pain #
    //true:if 75% played, we need a stop & rewind button
    //currentsong at end of FILE
@@ -103,9 +113,12 @@ void draw() {
    */
   print("current song # is:",currentsong);
   playlist.pause();//note: computer play muitple song
-     playlist.rewind();
+     playlist.rewind();// mulitple file will play at the same time
      //try catch
-     if int( random(numbermusicsongs>=numberMusicSongs-1) {//note: possilble error when !=
+     if (randomplaylist==true) {
+       currentSong = int (random(numbermusicsongs-numbermusiccsongs, numbermusicSongs) );
+     } else{
+     if   int( random   (numbermusicsongs>=numberMusicSongs-1) {//note: possilble error when !=
      currentSong = 0;
      }else{
        currentsong++;
@@ -115,7 +128,7 @@ void draw() {
      playlist.play();
      /*
      if (!playlist.isplaying()){//error:else
-     printIn('else of IF-elseif-else(.isplaying)");
+     printIn("else of IF-elseif-else (.isplaying)");
      playlist.pause();//note: computer plays harddrive file,
      playlist.rewind();// muliplel files will play at the 
      iioou 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ppp
