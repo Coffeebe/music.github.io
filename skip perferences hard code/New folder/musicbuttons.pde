@@ -8,17 +8,18 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugen.*;
 //\minium library
+Minim minim;
 int numbersoundeffects=4;//DEV Verify ,os able to count (cs20 solution)
 int numberMusicsongs=8;//DDEV Verify, os able to count (cs20 soluttion)
 Audioplayer[]playerlist= new audioplayer[numbermusicsongs];
 Audioplayer[]soundEffects= new audioplayer[numberSoundeffect];
 AudioMetaData[]playlistmetadata=new AudioMetaData[NumberMusicSongs];
-int currentSong=0; //java at 0, no for all languages
-int skip = 5000
+int currentSong = numberMusicSongs - numberMusicSongs; //java at 0, no for all languages
+int skip = 5000;
 //
 int AppHeight,AppWeight
-//
-boolean looping = false;
+//        
+boolean looping = false, randomPlaylist=false;
 //
 int skip=0;
 //
