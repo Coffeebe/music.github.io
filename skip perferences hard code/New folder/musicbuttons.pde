@@ -19,27 +19,27 @@ int skip = 5000;
 //
 int AppHeight,AppWeight
 //        
-boolean looping = false, randomPlaylist=false;
+Boolean looping = false,randomPlaylist = false;
 //
 int skip=0;
 //
 void setup() {
 //Display: CANVAS & Full
 size(400, 500);//width,height
-fullScreen();//displaywidth, displayheigtht
+//fullScreen();//displaywidth, displayheigtht
 appWidth = displayWidth;
 appHeight = displayHeight;
 //landscape is hardcoded
 //println(appwidth, appheight);
 //display geomtry: landscape, portrait, square
 String displayInstructions=( appWidth >= appHeight) ?"good to go": "bro,turn your phone" ;
-println(displayInstructions);
+//println(displayInstructions);
 //
 minium= new Minium(this); //loadflile should also load from project folder
 String extension =".mp3";
-String pathwaysoundeffect="../../../Audio/soundeffect/";//relative path
+String pathwaysoundeffect="../../../../../Audio/soundeffect/";//relative path
 //Note:'../ preivous Error 
-String pathwayMusic= "../../../Audio/musicdownload/";//relative path
+String pathwayMusic= "../../../../../Audio/musicdownload/";//relative path
 String quickButtonsound="CarDoorCloseing.mp3";
 String pathway="../Audio/Sound Files/";// Relative Path
 String groove="groove";
@@ -73,6 +73,7 @@ playlistMetadata[0]= playlist[0].getMetaData(); // reads song meta 1,like song 1
 //metadata[0]=minim.loadfile(pathQuitbuttonsound);
 //playlist1= minium.loadfile(path);
 //
+soundEffects = minim.loadfile(filepathNameSoundeffect[0]);
 //
 //println("current song, random number:, int (random(0,8));
 //music starts before canvas purpose of player
@@ -105,12 +106,13 @@ void draw() {
    //.pause() in keypressed() is actually stop
    } else if (looping==false && !playlist[currentsong].isplaying() &&(playlist[currentsong].position()>playlist[currentsong].length()*0.75)){//calc Pain #
    //true:if 75% played, we need a stop & rewind button
+   //.pause() in keypressed(){}is actually stop
    //currentsong at end of FILE
    
    playlist[currentsong].rewind();//note: !.isplaying() &.rewind()=stop
    currentsong=current+1;//currentSong
    playlist[currentsong].play();
-   } 
+   } else {
    */
   print("current song # is:",currentsong);
   playlist.pause();//note: computer play muitple song
