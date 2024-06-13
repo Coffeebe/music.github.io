@@ -7,7 +7,7 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugen.*;
-//\minium library
+//minium library
 Minim minim;
 int numbersoundeffects=4;//DEV Verify ,os able to count (cs20 solution)
 int numberMusicsongs=8;//DDEV Verify, os able to count (cs20 soluttion)
@@ -19,7 +19,7 @@ int skip = 5000;
 //
 int AppHeight,AppWeight
 //        
-Boolean looping = false,randomPlaylist = false;
+;
 //
 int skip=0;
 //
@@ -52,7 +52,7 @@ String beatyourcompetition = "Beat_Your_Competition";
 String cycles="Cycles";
 String eurek= "Eureka";
 String ghost_walk="ghost_walk";
-String newsroom = "Newsroom"
+String newsroom = "Newsroom";
 String startyourEngines = "Start_Your_Engines";
 String thSimpest="the_simplest";
 
@@ -97,11 +97,11 @@ void draw() {
   
   //auto play code for future use
    //scontains instructions from key board short Cuts
-   if (playlist[currentsong],isplaying()){
+
    //empty if is false 
    if(playlist.isPlaying()){
-     if(!playlist.islooping() && looping=false; // protect .loop() from .rewind(). () as stop loop
-   } else if looping == false && !playlist.isplaying() && playlist.lenght()<180000) {//PAIN minutes is 2 ,120s, 120,000ms
+     if(!playlist.islooping() && looping==true )looping=false; // protect .loop() from .rewind(). () as stop loop
+   } else if (looping == false && !playlist.isplaying() && playlist.lenght()<180000) {//PAIN minutes is 2 ,120s, 120,000ms
    //true: if song is less than # minutes,stop,I want to hear it from the beginning
    //.pause() in keypressed() is actually stop
    } else if (looping==false && !playlist[currentsong].isplaying() &&(playlist[currentsong].position()>playlist[currentsong].length()*0.75)){//calc Pain #
@@ -113,7 +113,7 @@ void draw() {
    currentsong=current+1;//currentSong
    playlist[currentsong].play();
    } else {
-   */
+   
   print("current song # is:",currentsong);
   playlist.pause();//note: computer play muitple song
      playlist.rewind();// mulitple file will play at the same time
@@ -121,7 +121,7 @@ void draw() {
      if (randomplaylist==true) {
        currentSong = int (random(numbermusicsongs-numbermusiccsongs, numbermusicSongs) );
      } else{
-     if   int( random   (numbermusicsongs>=numberMusicSongs-1) {//note: possilble error when !=
+     if  (numbermusicsongs>=numberMusicSongs-1) {//note: possilble error when !=
      currentSong = 0;
      }else{
        currentsong++;
@@ -148,7 +148,7 @@ void draw() {
   */
   //
   //printing text to console | canvas
-  fill(black)://note: background for rect()
+  fill(black);//note: background for rect()
   rect(width*1/4,height*0,width*1/2,height*1/10); //text div
   fill(white);//Ink
   textAlign(CENTER,CENTER); //align X&Y see processing.org/ reference
@@ -164,7 +164,24 @@ void draw() {
    if (playlist[currentSong].ismuted())println("muted");
 }//end draw
 //
-void keyPressed() {
+void keyPressed(){
+  if (key=='A'||key=='a'){ //random pick another song in the song in the playlist
+  currentSong = int (random(numberMusicsong-numberMusicSongs,numberMusicSongs)
+    println("current song, random number:",currentSong);
+    playlist.pause(); //note: computer plays harddrive file,
+    playlist.rewind(); // mulitple file will play at the same time
+    playlist = minim.loadfile(filepathnameMusic[currentsong]);
+    playlist.play();
+  }
+  if(key=='Z'||key=='z'){//randomly pick another song allthe time, even in autoplay
+  if(randomplaylist ==true){
+    randomplaylist = false;
+  } else{
+    randomplaylist = true;
+  }
+  println("randomizing the play list is:",randomplaylist);
+  }
+  
   if (key=='p'|| key =='p') {//play pause button
       if (playlist1[currentSong].isPlaying() ) {//note,debugging use true==true , true==false
         playlist1[currentSong].pause();//play
@@ -180,32 +197,34 @@ void keyPressed() {
       playlist[currentsong].loop(0);
       looping=true;
     } //end loop infinites times
-    if (key==S|| key==s) {//stop button
+    if (key=='S'|| key=='s') {//stop button
       playlist[currentsong].pause();
       playlist[currentsong].rewind();// affects loop times
       looping=false;
     
     }// end stop button
     //
-    -ff: first 10 seconds means NEXT
-     -ff: last 25% means NEXT
-     -ff means between above, it is a ff Button
-    -note:between the above,NEXT Exists
+    //-ff: first 10 seconds means NEXT
+    //-ff: last 25% means NEXT
+     //-ff means between above, it is a ff Button
+    //-note:between the above,NEXT Exists
     if (key=='F'||key=='f')playlist[0].skip(1000);//forward 1 second skip
-    */
+    
     if(playposition<10000);
-    if(playlist.position()>=10000 &&(playlist.position()<=playlist.lenght()0.75);
-    if(playlist.position()>playlist.lenght()0.75);{
-      */
+    //if(playlist.position()>=10000 &&(playlist.position()<=playlist.lenght()0.75);
+    //if(playlist.position()>playlist.lenght()0.75);{
+     
     println("current Song,random number:",currentSong);
      playlist.pause();//note: computer play muitple song
      playlist.rewind();
      //try catch
+   123  }else{
      if int( random(numbermusicsongs>=numberMusicSongs-1) {//note: possilble error when !=
      currentSong = 0;
      }else{
        currentsong++;
      }
+    }
      println("current Song changed to:",currentsong);
      playlist=minim.loadfile (filePathnameMusic[currentsong]);
      playlist.play();
@@ -248,7 +267,7 @@ void keyPressed() {
     //local,might need to be global
     //perferences,might need to be in draw
     //
-  }//end keypressed
+    }//end keypressed
   //
   void mousePressed() {
   }//end Mousepressed
